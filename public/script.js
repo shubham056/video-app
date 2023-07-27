@@ -12,12 +12,13 @@ let YourName = prompt('Type Your Name');
 console.log(YourName);
 
 var peer = new Peer(undefined, {   //we undefine this because peer server create it's own user it
-  port: 3000,
-  host: '/',
-  path: '/peerjs'
-  //path: '/peerjs',
+
+  host: 'https://better-lean-lancer.glitch.me',
+  secure: true,
+  port: 443,
+  //port: 3000,
   //host: '/',
-  //port: '3001'
+  //path: '/peerjs',
 });
 
 let myVideoStream;
