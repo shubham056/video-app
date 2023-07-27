@@ -1,4 +1,4 @@
-const socket = io('https://boulder-protective-zebu.glitch.me');  //socket connection
+const socket = io('boulder-protective-zebu.glitch.me');  //socket connection
 const videoGrid = document.getElementById('video-grid');
 const userDropDown = document.getElementById('myDropdown');
 const myVideo = document.createElement('video');
@@ -13,7 +13,7 @@ console.log(YourName);
 
 var peer = new Peer(undefined, {   //we undefine this because peer server create it's own user it
   port: 3000,
-  host: 'https://boulder-protective-zebu.glitch.me',
+  host: 'boulder-protective-zebu.glitch.me',
   path: '/peerjs'
   //path: '/peerjs',
   //host: '/',
