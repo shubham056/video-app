@@ -12,9 +12,12 @@ let YourName = prompt('Type Your Name');
 console.log(YourName);
 
 var peer = new Peer(undefined, {   //we undefine this because peer server create it's own user it
-  port: 3000,
+  //port: 3000,
   host: 'boulder-protective-zebu.glitch.me',
-  path: '/peerjs'
+  path: '/peerjs',
+  port: 443,
+  path: '/peerjs',
+  secure: true
   //path: '/peerjs',
   //host: '/',
   //port: '3001'
