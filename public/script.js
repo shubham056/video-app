@@ -1,4 +1,4 @@
-const socket = io('/');  //socket connection
+const socket = io('https://boulder-protective-zebu.glitch.me');  //socket connection
 const videoGrid = document.getElementById('video-grid');
 const userDropDown = document.getElementById('myDropdown');
 const myVideo = document.createElement('video');
@@ -12,13 +12,12 @@ let YourName = prompt('Type Your Name');
 console.log(YourName);
 
 var peer = new Peer(undefined, {   //we undefine this because peer server create it's own user it
-
-  host: 'https://better-lean-lancer.glitch.me',
-  secure: true,
-  port: 443,
-  //port: 3000,
-  //host: '/',
+  port: 3000,
+  host: 'https://boulder-protective-zebu.glitch.me',
+  path: '/peerjs'
   //path: '/peerjs',
+  //host: '/',
+  //port: '3001'
 });
 
 let myVideoStream;
