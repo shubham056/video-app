@@ -1,4 +1,5 @@
-const socket = io('boulder-protective-zebu.glitch.me');  //socket connection
+const socket = io('boulder-protective-zebu.glitch.me');  //socket connection for server
+//const socket = io('/');  //socket connection
 const videoGrid = document.getElementById('video-grid');
 const userDropDown = document.getElementById('myDropdown');
 const myVideo = document.createElement('video');
@@ -11,17 +12,28 @@ let YourName = prompt('Type Your Name');
 // let bar = confirm('Confirm or deny');
 console.log(YourName);
 
-var peer = new Peer(undefined, {   //we undefine this because peer server create it's own user it
-  //port: 3000,
-  host: 'boulder-protective-zebu.glitch.me',
-  path: '/peerjs',
-  port: 443,
-  path: '/peerjs',
-  secure: true
-  //path: '/peerjs',
-  //host: '/',
-  //port: '3001'
-});
+// var peer = new Peer(undefined, {   //we undefine this because peer server create it's own user it
+//   port: 3000,
+//   host: '/',
+//   path: '/peerjs',
+//   // host: 'boulder-protective-zebu.glitch.me',
+//   // path: '/peerjs',
+//   // port: 443,
+//   // path: '/peerjs',
+//   // secure: true
+// });
+
+const peer = new Peer(
+  {
+    "urls": [
+      "turn:13.250.13.83:3478?transport=udp"
+    ],
+    "username": "YzYNCouZM1mhqhmseWk6",
+    "credential": "YzYNCouZM1mhqhmseWk6"
+  }
+);
+
+
 
 let myVideoStream;
 navigator.mediaDevices.getUserMedia({     //by using this we can access user device media(audio, video) 
@@ -273,6 +285,7 @@ const listOfUser = () => {
   while (userDropDown.firstChild) {
     userDropDown.removeChild(userDropDown.lastChild);
   }
+  console.log("user list!!", userlist)
   for (var i = 0; i < userlist.length; i++) {
     var x = document.createElement("a");
     var t = document.createTextNode(`VideoSector ${i + 1}`);
