@@ -23,15 +23,35 @@ console.log(YourName);
 //   // secure: true
 // });
 
-const peer = new Peer(
-  {
-    "urls": [
-      "turn:13.250.13.83:3478?transport=udp"
-    ],
-    "username": "YzYNCouZM1mhqhmseWk6",
-    "credential": "YzYNCouZM1mhqhmseWk6"
+const peer = new Peer({
+  config: {
+    iceServers: [
+      {
+        urls: "stun:stun.relay.metered.ca:80",
+      },
+      {
+        urls: "turn:a.relay.metered.ca:80",
+        username: "86d77cea848ea4250ccec4f7",
+        credential: "7YoiwNJ21VMUGV82",
+      },
+      {
+        urls: "turn:a.relay.metered.ca:80?transport=tcp",
+        username: "86d77cea848ea4250ccec4f7",
+        credential: "7YoiwNJ21VMUGV82",
+      },
+      {
+        urls: "turn:a.relay.metered.ca:443",
+        username: "86d77cea848ea4250ccec4f7",
+        credential: "7YoiwNJ21VMUGV82",
+      },
+      {
+        urls: "turn:a.relay.metered.ca:443?transport=tcp",
+        username: "86d77cea848ea4250ccec4f7",
+        credential: "7YoiwNJ21VMUGV82",
+      },
+    ]
   }
-);
+});
 
 
 
